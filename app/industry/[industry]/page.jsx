@@ -16,7 +16,8 @@ const validIndustries = [
 
 export default function IndustryPage({ params }) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const { industry } = use(params);
+  const resolvedParams = use(params);
+  const { industry } = resolvedParams;
   if (!validIndustries.includes(industry)) {
     notFound();
   }
@@ -24,60 +25,57 @@ export default function IndustryPage({ params }) {
   if (industry === 'hvac') {
     return (
       <>
-        <div style={{ display: 'flex', minHeight: '500px', width: '100%', marginTop: '80px', border: 'none', boxShadow: 'none', background: '#fff' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '500px', width: '100%', marginTop: '80px', border: 'none', boxShadow: 'none', background: '#fff' }} className="flex flex-col md:flex-row">
           {/* Left Side */}
-          <div style={{ background: '#FFD400', flex: 1, padding: '48px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <div style={{ color: '#23282B', fontWeight: 600, marginBottom: 16 }}>HVAC SOFTWARE</div>
-            <h1 style={{ fontSize: '3rem', fontWeight: 800, lineHeight: 1.1, marginBottom: 24 }}>
+          <div style={{ background: '#FFD400', flex: 1, padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }} className="p-6 sm:p-8 md:p-12 lg:p-16">
+            <div style={{ color: '#23282B', fontWeight: 600, marginBottom: 16 }} className="text-sm sm:text-base">HVAC SOFTWARE</div>
+            <h1 style={{ fontWeight: 800, lineHeight: 1.1, marginBottom: 24 }} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               <span style={{ background: '#fff', padding: '0 8px', borderRadius: '4px', display: 'inline-block' }}>Grow your business</span><br />
               with the best HVAC software
             </h1>
-            <p style={{ fontSize: '1.25rem', color: '#23282B', marginBottom: 32, maxWidth: 600 }}>
+            <p style={{ color: '#23282B', marginBottom: 32, maxWidth: 600 }} className="text-base sm:text-lg md:text-xl">
               Grow and scale your HVAC business all year long with the home service industry's top business management platform. Schedule, dispatch, send invoices and estimates all in one place.
             </p>
-            <button style={{ background: '#23282B', color: '#ffd400', fontWeight: 600, fontSize: '1.25rem', padding: '16px 40px', borderRadius: 8, border: 'none', marginBottom: 32, cursor: 'pointer', width: 'fit-content' }}>Book a demo</button>
-            <div style={{ display: 'flex', gap: 32, alignItems: 'center' }}>
+            <button style={{ background: '#23282B', color: '#ffd400', fontWeight: 600, borderRadius: 8, border: 'none', marginBottom: 32, cursor: 'pointer', width: 'fit-content' }} className="text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-4">Book a demo</button>
+            <div style={{ display: 'flex', alignItems: 'center' }} className="flex-col sm:flex-row gap-4 sm:gap-8">
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <img src="/images/captera.webp" alt="Capterra" style={{ height: 38 }} />
+                <img src="/images/captera.webp" alt="Capterra" className="h-8 sm:h-10" />
                 <span style={{ color: '#FFD400' }}>★★★★★</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <img src="/images/software1.webp" alt="Software Advice" style={{ height: 38 }} />
+                <img src="/images/software1.webp" alt="Software Advice" className="h-8 sm:h-10" />
                 <span style={{ color: '#FFD400' }}>★★★★★</span>
               </div>
             </div>
           </div>
           {/* Right Side */}
-          <div style={{ flex: 1, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', border: 'none', boxShadow: 'none' }}>
+          <div style={{ flex: 1, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', border: 'none', boxShadow: 'none' }} className="min-h-[300px] md:min-h-[500px]">
             <img src="/images/hvac1.webp" alt="HVAC Hero" style={{ width: '100%', height: '100%', objectFit: 'cover', borderTopRightRadius: 0, borderBottomRightRadius: 0 }} />
-            <div style={{ position: 'absolute', bottom: 32, left: 0, background: 'rgba(0,0,0,0.3)', borderRadius: 16, padding: '24px 32px', color: '#fff', maxWidth: 400 }}>
-              <div style={{ fontWeight: 700, fontSize: '1.1rem' }}>Dan Johnson</div>
-              <div style={{ fontSize: '1rem' }}>CEO & Founder of Einstein Pros</div>
-              <div style={{ color: '#FFD400', fontWeight: 600, fontSize: '1.1rem', marginTop: 8, cursor: 'pointer' }}>▶ Watch testimonial</div>
+            <div style={{ position: 'absolute', left: 0, background: 'rgba(0,0,0,0.3)', borderRadius: 16, color: '#fff', maxWidth: 400 }} className="bottom-4 sm:bottom-8 p-4 sm:p-6 md:p-8 mx-4">
+              <div className="font-bold text-base sm:text-lg">Dan Johnson</div>
+              <div className="text-sm sm:text-base">CEO & Founder of Einstein Pros</div>
+              <div style={{ color: '#FFD400', fontWeight: 600, marginTop: 8, cursor: 'pointer' }} className="text-base sm:text-lg">▶ Watch testimonial</div>
             </div>
           </div>
         </div>
         {/* Preferred Vendor Section */}
-        <section style={{ background: '#fff', padding: '56px 0 32px 0', marginTop: 32 }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{ color: '#23282B', fontWeight: 400, fontSize: '1.5rem', letterSpacing: 2, marginBottom: 32 }}>
+        <section className="bg-white py-8 sm:py-12 md:py-16 mt-8 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-gray-800 font-normal text-lg sm:text-xl md:text-2xl tracking-wider mb-6 sm:mb-8">
               WORKIZ IS THE PREFERRED VENDOR OF:
             </h2>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 48, flexWrap: 'wrap' }}>
+            <div className="flex justify-center items-center gap-6 sm:gap-8 md:gap-12 flex-wrap">
               <div>
-                <img src="/images/american-logo.svg" alt="American Standard" style={{ height: 44, marginBottom: 8 }} />
-                
+                <img src="/images/american-logo.svg" alt="American Standard" className="h-8 sm:h-10 md:h-11 mb-2" />
               </div>
               <div>
-                <img src="/images/trane-logo.svg" alt="Trane" style={{ height: 44, marginBottom: 8 }} />
-                
+                <img src="/images/trane-logo.svg" alt="Trane" className="h-8 sm:h-10 md:h-11 mb-2" />
               </div>
               <div>
-                <img src="/images/searchking-logo.svg" alt="SearchKings" style={{ height: 44 }} />
+                <img src="/images/searchking-logo.svg" alt="SearchKings" className="h-8 sm:h-10 md:h-11" />
               </div>
               <div>
-                <img src="/images/jb-logo.svg" alt="JB Warranties" style={{ height: 44 }} />
-                
+                <img src="/images/jb-logo.svg" alt="JB Warranties" className="h-8 sm:h-10 md:h-11" />
               </div>
             </div>
           </div>
@@ -1694,6 +1692,8 @@ export default function IndustryPage({ params }) {
     );
   }
   
+ 
+  
   if (industry === 'electricians') {
     return (
       <>
@@ -2102,6 +2102,1083 @@ export default function IndustryPage({ params }) {
             <button style={{ background: '#FFD400', color: '#23282B', fontWeight: 600, fontSize: 22, padding: '18px 44px', borderRadius: 8, border: 'none', cursor: 'pointer', width: 'fit-content', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>Start free trial</button>
           </div>
         </section>
+
+        {/* Workiz Pay Section */}
+        <section style={{ 
+          width: '100%', 
+          display: 'flex', 
+          gap: '48px', 
+          alignItems: 'center', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center', 
+          background: '#f6f8fa', 
+          border: 'none', 
+          boxShadow: 'none', 
+          padding: '64px 0' 
+        }}>
+          {/* Left: Image */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '700px', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            paddingLeft: '32px' 
+          }}>
+            <img
+              src="/images/electric-field.webp"
+              alt="Workiz Pay Electrical Field Service Interface"
+              style={{ 
+                width: '100%', 
+                maxWidth: '600px', 
+                borderRadius: '24px', 
+                boxShadow: '0 4px 32px rgba(0,0,0,0.10)' 
+              }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          
+          {/* Right: Text Content */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '600px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'center', 
+            gap: '12px', 
+            paddingRight: '32px' 
+          }}>
+            <div style={{ 
+              color: '#f25c4d', 
+              fontWeight: 700, 
+              fontSize: '14px', 
+              letterSpacing: '1px', 
+              marginBottom: '8px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              textTransform: 'uppercase' 
+            }}>
+              ELECTRICAL FIELD SERVICE SOFTWARE
+            </div>
+            <div style={{ 
+              color: '#23282B', 
+              fontWeight: 700, 
+              fontSize: '40px', 
+              marginBottom: '8px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              lineHeight: 1.1 
+            }}>
+              Electrical contractors, get paid faster
+            </div>
+            <div style={{ 
+              color: '#23282B', 
+              fontSize: '18px', 
+              fontWeight: 400, 
+              marginBottom: '32px', 
+              lineHeight: 1.4 
+            }}>
+              Never leave money on the table or chase down payments again with Workiz electrical contracting software. Automatically send payment requests, estimates, and invoices from the office or the field.
+            </div>
+            <button style={{ 
+              background: '#FFD400', 
+              color: '#23282B', 
+              fontWeight: 600, 
+              fontSize: '18px', 
+              padding: '16px 32px', 
+              borderRadius: '8px', 
+              border: 'none', 
+              cursor: 'pointer', 
+              width: 'fit-content', 
+              boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+              fontFamily: 'Plus Jakarta Sans'
+            }}>
+              Book a demo
+            </button>
+          </div>
+        </section>
+
+        {/* Electrical Scheduling Software Section */}
+        <section style={{ width: '100%', display: 'flex', gap: 48, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', background: '#fff', border: 'none', boxShadow: 'none', padding: '64px 0' }}>
+          {/* Left: Image */}
+          <div style={{ flex: 1, minWidth: 340, maxWidth: 700, display: 'flex', justifyContent: 'center', alignItems: 'center', paddingLeft: 32 }}>
+            <img
+              src="/images/scheduling.png"
+              alt="Electrical Scheduling Software Interface"
+              style={{ width: '100%', maxWidth: 600, borderRadius: 24, boxShadow: '0 4px 32px rgba(0,0,0,0.10)' }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          {/* Right: Text Content */}
+          <div style={{ flex: 1, minWidth: 340, maxWidth: 600, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 12, paddingRight: 32 }}>
+            <div style={{ color: '#10b981', fontWeight: 700, fontSize: 14, letterSpacing: 1, marginBottom: 8, fontFamily: 'Plus Jakarta Sans', textTransform: 'uppercase' }}>ELECTRICAL SCHEDULING SOFTWARE</div>
+            <div style={{ color: '#23282B', fontWeight: 700, fontSize: 40, marginBottom: 8, fontFamily: 'Plus Jakarta Sans', lineHeight: 1.1 }}>Schedule and dispatch your electricians efficiently</div>
+            <div style={{ color: '#23282B', fontSize: 18, fontWeight: 400, marginBottom: 24, lineHeight: 1.4 }}>
+              Optimize your electrical team's productivity with our drag-and-drop scheduling software. Customers can book electrical services online 24/7, and you can manage all your electrical jobs from a single dashboard. Track job progress, assign the right electrician for each task, and never miss an appointment.
+            </div>
+            <a href="#" style={{ color: '#23282B', fontWeight: 500, fontSize: 18, textDecoration: 'none', marginTop: 4, fontFamily: 'Plus Jakarta Sans', display: 'inline-block' }}>Learn More &rarr;</a>
+          </div>
+        </section>
+
+        {/* Electrical Job Management Section */}
+        <section style={{ 
+          width: '100%', 
+          display: 'flex', 
+          gap: '48px', 
+          alignItems: 'center', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center', 
+          background: '#fff', 
+          border: 'none', 
+          boxShadow: 'none', 
+          padding: '64px 0' 
+        }}>
+          {/* Left: Text Content */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '600px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'center', 
+            gap: '12px', 
+            paddingLeft: '32px' 
+          }}>
+            <div style={{ 
+              color: '#f25c4d', 
+              fontWeight: 700, 
+              fontSize: '14px', 
+              letterSpacing: '1px', 
+              marginBottom: '8px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              textTransform: 'uppercase' 
+            }}>
+              ELECTRICAL JOB MANAGEMENT SOFTWARE
+            </div>
+            <div style={{ 
+              color: '#23282B', 
+              fontWeight: 700, 
+              fontSize: '40px', 
+              marginBottom: '24px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              lineHeight: 1.1 
+            }}>
+              Maximize every electrical installation lead
+            </div>
+            
+            {/* Bullet Points */}
+            <div style={{ marginBottom: '32px' }}>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                marginBottom: '16px',
+                fontSize: '18px',
+                lineHeight: 1.4,
+                color: '#23282B'
+              }}>
+                <span style={{ 
+                  color: '#22c55e', 
+                  marginRight: '12px', 
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>•</span>
+                <span>Ramp up your bookings with Workiz's advanced communication suite</span>
+              </div>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                marginBottom: '16px',
+                fontSize: '18px',
+                lineHeight: 1.4,
+                color: '#23282B'
+              }}>
+                <span style={{ 
+                  color: '#22c55e', 
+                  marginRight: '12px', 
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>•</span>
+                <span>Create a stellar customer service experience with efficient call and message management</span>
+              </div>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                marginBottom: '16px',
+                fontSize: '18px',
+                lineHeight: 1.4,
+                color: '#23282B'
+              }}>
+                <span style={{ 
+                  color: '#22c55e', 
+                  marginRight: '12px', 
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>•</span>
+                <span>Boost your revenue by sending automatic review reminders to satisfied customers</span>
+              </div>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                marginBottom: '16px',
+                fontSize: '18px',
+                lineHeight: 1.4,
+                color: '#23282B'
+              }}>
+                <span style={{ 
+                  color: '#22c55e', 
+                  marginRight: '12px', 
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>•</span>
+                <span>Elevate your business above the rest with top-notch service that keeps customers coming back</span>
+              </div>
+            </div>
+            
+            <button style={{ 
+              background: '#FFD400', 
+              color: '#23282B', 
+              fontWeight: 600, 
+              fontSize: '18px', 
+              padding: '16px 32px', 
+              borderRadius: '8px', 
+              border: 'none', 
+              cursor: 'pointer', 
+              width: 'fit-content', 
+              boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+              fontFamily: 'Plus Jakarta Sans'
+            }}>
+              Book a demo
+            </button>
+          </div>
+          
+          {/* Right: Image */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '700px', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            paddingRight: '32px' 
+          }}>
+            <img
+              src="/images/electric-job.webp"
+              alt="Electrical Job Management Communications Interface"
+              style={{ 
+                width: '100%', 
+                maxWidth: '600px', 
+                borderRadius: '24px', 
+                boxShadow: '0 4px 32px rgba(0,0,0,0.10)' 
+              }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </section>
+
+        {/* Route Optimization Section */}
+        <section style={{ 
+          width: '100%', 
+          display: 'flex', 
+          gap: '48px', 
+          alignItems: 'center', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center', 
+          background: '#f6f8fa', 
+          border: 'none', 
+          boxShadow: 'none', 
+          padding: '64px 0' 
+        }}>
+          {/* Left: Text Content */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '600px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'center', 
+            gap: '12px', 
+            paddingLeft: '32px' 
+          }}>
+            <div style={{ 
+              color: '#23282B', 
+              fontWeight: 700, 
+              fontSize: '40px', 
+              marginBottom: '24px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              lineHeight: 1.1 
+            }}>
+              Reduce transit time and cut costs
+            </div>
+            
+            {/* Bullet Points */}
+            <div style={{ marginBottom: '32px' }}>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                marginBottom: '16px',
+                fontSize: '18px',
+                lineHeight: 1.4,
+                color: '#23282B'
+              }}>
+                <span style={{ 
+                  color: '#22c55e', 
+                  marginRight: '12px', 
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>•</span>
+                <span>Maximize your workday with Workiz's efficient route planning and GPS tracking</span>
+              </div>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                marginBottom: '16px',
+                fontSize: '18px',
+                lineHeight: 1.4,
+                color: '#23282B'
+              }}>
+                <span style={{ 
+                  color: '#22c55e', 
+                  marginRight: '12px', 
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>•</span>
+                <span>Reduce gas costs by up to 30% by optimizing your routes and reducing mileage</span>
+              </div>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                marginBottom: '16px',
+                fontSize: '18px',
+                lineHeight: 1.4,
+                color: '#23282B'
+              }}>
+                <span style={{ 
+                  color: '#22c55e', 
+                  marginRight: '12px', 
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>•</span>
+                <span>Reach your customers faster and increase productivity with Workiz's routing tools</span>
+              </div>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                marginBottom: '16px',
+                fontSize: '18px',
+                lineHeight: 1.4,
+                color: '#23282B'
+              }}>
+                <span style={{ 
+                  color: '#22c55e', 
+                  marginRight: '12px', 
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>•</span>
+                <span>Plan your routes in seconds for better time management and more efficient operations</span>
+              </div>
+            </div>
+            
+            <a href="#" style={{ 
+              color: '#23282B', 
+              fontWeight: 500, 
+              fontSize: '18px', 
+              textDecoration: 'none', 
+              marginTop: '4px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              display: 'inline-block' 
+            }}>
+              Book a demo →
+            </a>
+          </div>
+          
+          {/* Right: Image */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '700px', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            paddingRight: '32px' 
+          }}>
+            <img
+              src="/images/ill.webp"
+              alt="Route Optimization Map Interface showing scheduled jobs and GPS tracking"
+              style={{ 
+                width: '100%', 
+                maxWidth: '600px', 
+                borderRadius: '24px', 
+                boxShadow: '0 4px 32px rgba(0,0,0,0.10)' 
+              }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </section>
+          {/* Multi-day Jobs Section */}
+          <section style={{ 
+          width: '100%', 
+          display: 'flex', 
+          gap: '48px', 
+          alignItems: 'center', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center', 
+          background: '#f6f8fa', 
+          border: 'none', 
+          boxShadow: 'none', 
+          padding: '64px 0' 
+        }}>
+          {/* Left: Text Content */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '600px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'center', 
+            gap: '12px', 
+            paddingLeft: '32px' 
+          }}>
+            <div style={{ 
+              color: '#f25c4d', 
+              fontWeight: 700, 
+              fontSize: '14px', 
+              letterSpacing: '1px', 
+              marginBottom: '8px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              textTransform: 'uppercase' 
+            }}>
+              MULTI-DAY JOBS
+            </div>
+            <div style={{ 
+              color: '#23282B', 
+              fontWeight: 700, 
+              fontSize: '40px', 
+              marginBottom: '8px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              lineHeight: 1.1 
+            }}>
+              Complex plumbing jobs managed efficiently
+            </div>
+            <div style={{ 
+              color: '#23282B', 
+              fontSize: '18px', 
+              fontWeight: 400, 
+              marginBottom: '24px', 
+              lineHeight: 1.4 
+            }}>
+              Track progress of multi-day plumbing jobs with tasks. You can assign more than one technician to a task and ensure efficient collaboration and job management. With the progress bar you will never miss a step and get more jobs done on time.
+            </div>
+            <a href="#" style={{ 
+              color: '#23282B', 
+              fontWeight: 500, 
+              fontSize: '18px', 
+              textDecoration: 'none', 
+              marginTop: '4px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              display: 'inline-block' 
+            }}>
+              Learn More →
+            </a>
+          </div>
+          
+          {/* Right: Image */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '700px', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            paddingRight: '32px' 
+          }}>
+            <img
+              src="/images/multiday-jobs.webp"
+              alt="Multi-day Jobs Calendar Interface"
+              style={{ 
+                width: '100%', 
+                maxWidth: '600px', 
+                borderRadius: '24px', 
+                boxShadow: '0 4px 32px rgba(0,0,0,0.10)' 
+              }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </section>
+         
+        
+        <Integrations />
+        <FaqSection />
+        <FooterSection />
+      </>
+    );
+  }
+  if (industry === 'garage-door-repair') {
+    const [isGarageVideoOpen, setIsGarageVideoOpen] = useState(false);
+    
+    return (
+      <>
+        <div style={{ display: 'flex', minHeight: '500px', width: '100%', marginTop: '80px', border: 'none', boxShadow: 'none', background: '#fff' }}>
+          {/* Left Side */}
+          <div style={{ background: '#FFD400', flex: 1, padding: '48px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ color: '#23282B', fontWeight: 600, marginBottom: 16, letterSpacing: 2 }}>GARAGE DOOR BUSINESS SOFTWARE</div>
+            <h1 style={{ fontSize: '3rem', fontWeight: 800, lineHeight: 1.1, marginBottom: 24 }}>
+              <span style={{ background: '#fff', padding: '0 8px', borderRadius: '4px', display: 'inline-block' }}>The #1 software</span><br />
+              for garage door business
+            </h1>
+            <p style={{ fontSize: '1.25rem', color: '#23282B', marginBottom: 32, maxWidth: 600 }}>
+              Grow your garage door service company with the easy-to-use garage door software. Schedule jobs, send estimates, and automate tedious tasks with an all-in-one solution.
+            </p>
+            <div style={{ display: 'flex', gap: 16, marginBottom: 32 }}>
+              <button style={{ background: 'transparent', color: '#23282B', fontWeight: 600, fontSize: '1.125rem', padding: '16px 32px', borderRadius: 8, border: '2px solid #23282B', cursor: 'pointer' }}>Call us today</button>
+              <button style={{ background: '#23282B', color: '#ffd400', fontWeight: 600, fontSize: '1.125rem', padding: '16px 32px', borderRadius: 8, border: 'none', cursor: 'pointer' }}>Start free trial</button>
+            </div>
+            <div style={{ display: 'flex', gap: 32, alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <img src="/images/captera.webp" alt="Capterra" style={{ height: 32 }} />
+                <span style={{ color: '#23282B' }}>★★★★★</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <img src="/images/software1.webp" alt="Software Advice" style={{ height: 32 }} />
+                <span style={{ color: '#23282B' }}>★★★★★</span>
+              </div>
+            </div>
+          </div>
+          {/* Right Side */}
+          <div style={{ flex: 1, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', border: 'none', boxShadow: 'none' }}>
+            <img src="/images/person.webp" alt="Garage Door Technician" style={{ width: '100%', height: '100%', objectFit: 'cover', borderTopRightRadius: 0, borderBottomRightRadius: 0 }} />
+            
+            {/* Testimonial Overlay */}
+            <div style={{
+              position: 'absolute',
+              bottom: '80px',
+              left: '2px',
+              width: '340px',
+              background: 'rgba(0,0,0,0.7)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              borderRadius: '8px',
+              padding: '16px',
+              color: 'white'
+            }}>
+              <h3 style={{ 
+                fontSize: '1rem', 
+                fontWeight: 'bold', 
+                marginBottom: '6px', 
+                color: 'white',
+                fontFamily: "'Plus Jakarta Sans', sans-serif"
+              }}>
+                Yuriy Dvomkin
+              </h3>
+              <p style={{ 
+                fontSize: '0.875rem', 
+                marginBottom: '8px', 
+                color: '#ccc',
+                fontFamily: "'Plus Jakarta Sans', sans-serif"
+              }}>
+                Owner of Garage Door Ninja
+              </p>
+              <button 
+                onClick={() => setIsGarageVideoOpen(true)}
+                style={{
+                  background: '#FFD400',
+                  color: '#23282B',
+                  border: 'none',
+                  borderRadius: '4px',
+                  padding: '8px 12px',
+                  fontSize: '0.875rem',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontFamily: "'Plus Jakarta Sans', sans-serif"
+                }}
+              >
+                <span style={{ fontSize: '1rem' }}>▶</span>
+                Watch testimonial
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Growth Stats Section */}
+        <section style={{ 
+          background: '#23282B', 
+          padding: '24px 0',
+          width: '100%' 
+        }}>
+          <div style={{ 
+            maxWidth: '1400px', 
+            margin: '0 auto', 
+            paddingLeft: '32px', 
+            paddingRight: '32px', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '16px'
+          }}>
+            
+            {/* Left: Growth Stat */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                background: '#22c55e',
+                borderRadius: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 17L9 11L13 15L21 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M16 7H21V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div style={{ 
+                fontSize: '2rem', 
+                fontWeight: 'bold', 
+                color: 'white',
+                fontFamily: "'Plus Jakarta Sans', sans-serif"
+              }}>
+                23% avg. growth in 3 months
+              </div>
+            </div>
+
+            {/* Right: Award badges */}
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+              <img 
+                src="/images/badge-1.png" 
+                alt="Momentum Leader 2025" 
+                style={{ height: '55px', width: 'auto' }}
+              />
+              <img 
+                src="/images/bdge-2.png" 
+                alt="High Performer Winter 2024" 
+                style={{ height: '55px', width: 'auto' }}
+              />
+              <img 
+                src="/images/badge-3.png" 
+                alt="Leader 2025" 
+                style={{ height: '55px', width: 'auto' }}
+              />
+              <img 
+                src="/images/badge-4.png" 
+                alt="Best Business Leader" 
+                style={{ height: '55px', width: 'auto' }}
+              />
+              <img 
+                src="/images/badge-5.png" 
+                alt="Leader Winter 2024" 
+                style={{ height: '55px', width: 'auto' }}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Video Modal */}
+        {isGarageVideoOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+            onClick={() => setIsGarageVideoOpen(false)}
+          >
+            <div
+              className="bg-black rounded-xl overflow-hidden shadow-lg relative"
+              style={{ width: "90vw", maxWidth: 640 }}
+              onClick={e => e.stopPropagation()}
+            >
+              <iframe
+                width="640"
+                height="360"
+                src="https://player.vimeo.com/video/794497293?autoplay=1&color=ffd400&title=0&byline=0&portrait=0"
+                title="Garage Door Testimonial Video"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              <button
+                className="absolute top-2 right-2 bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition"
+                onClick={() => setIsGarageVideoOpen(false)}
+              >
+                <svg width="24" height="24" fill="none" stroke="#23282b" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M6 6l12 12M6 18L18 6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+         {/* Features Section - Inventory & Online Booking */}
+         <section style={{ 
+          background: '#fff', 
+          padding: '80px 0',
+          width: '100%' 
+        }}>
+          <div style={{ 
+            maxWidth: '1400px', 
+            margin: '0 auto', 
+            paddingLeft: '32px', 
+            paddingRight: '32px', 
+            display: 'flex', 
+            gap: '32px',
+            flexWrap: 'wrap',
+            alignItems: 'stretch'
+          }}>
+            
+            {/* Left Card - Inventory Tracking */}
+            <div style={{ 
+              background: 'linear-gradient(169.48deg, #096187 5.7%, #23282B 98.96%)',
+              borderRadius: '16px', 
+              flex: '1',
+              minWidth: '500px',
+              position: 'relative',
+              overflow: 'hidden',
+              height: '500px'
+            }}>
+              {/* Background Image */}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                width: '60%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-end'
+              }}>
+                <img 
+                  src="https://www.workiz.com/wp-content/uploads/2024/08/feature-block-inventory-electrician-desktop.webp"
+                  alt="Feature Block Inventory Electrician Desktop"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    maxHeight: '100%',
+                    objectFit: 'contain'
+                  }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              {/* Content */}
+              <div style={{
+                position: 'relative',
+                zIndex: 3,
+                padding: '40px',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                width: '50%'
+              }}>
+                <div>
+                  <div style={{ 
+                    fontSize: '12px', 
+                    fontWeight: 500, 
+                    letterSpacing: '2px',
+                    marginBottom: '16px',
+                    color: 'white',
+                    textTransform: 'uppercase',
+                    fontFamily: "'Inter', sans-serif"
+                  }}>
+                    INVENTORY
+                  </div>
+                  <h3 style={{ 
+                    fontSize: '40px', 
+                    fontWeight: 700, 
+                    lineHeight: 1.1,
+                    letterSpacing: '1px',
+                    marginBottom: '24px',
+                    color: '#FFD400',
+                    fontFamily: "'Plus Jakarta Sans', sans-serif"
+                  }}>
+                    Track your inventory in real-time
+                  </h3>
+                  <div style={{ 
+                    fontSize: '16px', 
+                    fontWeight: 400,
+                    lineHeight: 1.5,
+                    color: 'white',
+                    marginBottom: '32px'
+                  }}>
+                    <p>Cut costs by tracking your inventory with real-time usage data and activity reports.</p>
+                  </div>
+                </div>
+                <div>
+                  <a 
+                    href="https://www.workiz.com/features/inventory-management/" 
+                    style={{
+                      background: 'transparent',
+                      border: '2px solid white',
+                      color: 'white',
+                      padding: '12px 24px',
+                      borderRadius: '8px',
+                      fontSize: '16px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      display: 'inline-block',
+                      fontFamily: "'Plus Jakarta Sans', sans-serif"
+                    }}
+                  >
+                    Learn more
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Sales Proposals Card */}
+            <div style={{ 
+              flex: 1, 
+              background: 'linear-gradient(169.48deg, #096187 5.7%, #23282B 98.96%)', 
+              borderRadius: '20px', 
+              position: 'relative',
+              overflow: 'hidden',
+              height: '500px',
+              display: 'flex'
+            }}>
+              {/* Background Image Layer */}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                display: 'flex',
+                zIndex: 1
+              }}>
+                <div style={{ width: '40%' }}></div>
+                <div style={{ 
+                  width: '60%', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  justifyContent: 'center', 
+                  alignItems: 'flex-end',
+                  paddingRight: '0px'
+                }}>
+                  <img 
+                    src="https://www.workiz.com/wp-content/uploads/2023/07/hl-sales-proposals.webp" 
+                    alt="Sales Proposals Desktop" 
+                    style={{ 
+                      width: 'auto',
+                      height: '90%',
+                      objectFit: 'contain'
+                    }} 
+                  />
+                </div>
+              </div>
+
+              {/* Text Content Layer */}
+              <div style={{ 
+                width: '50%',
+                padding: '60px',
+                paddingTop: '40px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+                zIndex: 3,
+                position: 'relative'
+              }}>
+                <div>
+                  <div style={{ 
+                    color: 'white', 
+                    fontSize: '0.7rem', 
+                    fontWeight: 700, 
+                    letterSpacing: '2px',
+                    marginBottom: '16px',
+                    textTransform: 'uppercase',
+                    fontFamily: "'Plus Jakarta Sans', sans-serif"
+                  }}>
+                    SALES PROPOSALS
+                  </div>
+                  <h2 style={{ 
+                    color: '#FFD400', 
+                    fontSize: '2.2rem', 
+                    fontWeight: 900, 
+                    lineHeight: 1.1,
+                    marginBottom: '16px',
+                    fontFamily: "'Plus Jakarta Sans', sans-serif"
+                  }}>
+                    Win 25% more jobs
+                  </h2>
+                  <p style={{ 
+                    color: 'white', 
+                    fontSize: '0.9rem', 
+                    fontWeight: 400,
+                    lineHeight: 1.4,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif"
+                  }}>
+                    Close larger deals by<br/>providing sales proposals<br/>to fit your customers<br/>budget requirements.
+                  </p>
+                </div>
+                <button style={{
+                  background: 'transparent',
+                  color: 'white',
+                  border: '2px solid white',
+                  borderRadius: '8px',
+                  padding: '12px 24px',
+                  fontSize: '1rem',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  alignSelf: 'flex-start',
+                  marginTop: '120px'
+                }}>
+                  Learn more
+                </button>
+              </div>
+
+              {/* Mobile Image for smaller screens */}
+              <div style={{
+                position: 'absolute',
+                right: '20px',
+                top: '40px',
+                bottom: '40px',
+                width: '45%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                zIndex: 2
+              }}>
+                <img 
+                  src="https://www.workiz.com/wp-content/uploads/2023/07/hl-sales-proposals-mob.webp" 
+                  alt="Sales Proposals Mobile Interface" 
+                  style={{ 
+                    width: '100%',
+                    height: 'auto',
+                    maxHeight: '100%',
+                    objectFit: 'contain',
+                    display: 'none'
+                  }} 
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+          
+         {/* Purchase Orders Section */}
+         <section style={{ width: '100%', display: 'flex', gap: 48, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', background: '#f6f8fa', border: 'none', boxShadow: 'none', padding: '64px 0' }}>
+          {/* Left: Image */}
+          <div style={{ flex: 1, minWidth: 340, maxWidth: 700, display: 'flex', justifyContent: 'center', alignItems: 'center', paddingLeft: 32 }}>
+            <img
+              src="/images/orders.webp"
+              alt="Orders Table"
+              style={{ width: '100%', maxWidth: 600, borderRadius: 24, boxShadow: '0 4px 32px rgba(0,0,0,0.10)' }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          {/* Right: Text Content */}
+          <div style={{ flex: 1, minWidth: 340, maxWidth: 600, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 12, paddingRight: 32 }}>
+            <div style={{ color: '#f25c4d', fontWeight: 700, fontSize: 12, letterSpacing: 1, marginBottom: 8, textTransform: 'uppercase' }}>PURCHASE ORDERS</div>
+            <div style={{ color: '#23282B', fontWeight: 560, fontSize: 35, marginBottom: 16, lineHeight: 1.1 }}>Your one–stop shop for order management</div>
+            <div style={{ color: '#23282B', fontSize: 18, fontWeight: 400, marginBottom: 24, lineHeight: 1.4 }}>
+              Quickly create and send purchase orders to vendors, linking items to your price book and relevant jobs. Track orders and monitor statuses, ensuring full visibility and reducing errors.
+            </div>
+            <button style={{ background: '#FFD400', color: '#23282B', fontWeight: 600, fontSize: 22, padding: '18px 44px', borderRadius: 8, border: 'none', cursor: 'pointer', width: 'fit-content', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>Start free trial</button>
+          </div>
+        </section>
+
+        {/* Garage Door Scheduling Software Section */}
+        <section style={{ 
+          width: '100%', 
+          display: 'flex', 
+          gap: '48px', 
+          alignItems: 'center', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center', 
+          background: '#f6f8fa', 
+          border: 'none', 
+          boxShadow: 'none', 
+          padding: '64px 0' 
+        }}>
+          {/* Left: Text Content */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '600px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'center', 
+            gap: '12px', 
+            paddingLeft: '32px' 
+          }}>
+            <div style={{ 
+              color: '#22c55e', 
+              fontWeight: 700, 
+              fontSize: '14px', 
+              letterSpacing: '1px', 
+              marginBottom: '8px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              textTransform: 'uppercase' 
+            }}>
+              GARAGE DOOR SCHEDULING SOFTWARE
+            </div>
+            <div style={{ 
+              color: '#23282B', 
+              fontWeight: 700, 
+              fontSize: '40px', 
+              marginBottom: '8px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              lineHeight: 1.1 
+            }}>
+              Manage and dispatch your garage door jobs
+            </div>
+            <div style={{ 
+              color: '#23282B', 
+              fontSize: '18px', 
+              fontWeight: 400, 
+              marginBottom: '32px', 
+              lineHeight: 1.4 
+            }}>
+              Transform your technician's scheduling and dispatching into a seamless, efficient process with our drag-and-drop scheduling tool. Manage your day, locations, and other garage door details on the go with the Workiz app. Offer your customers the flexibility to book online anytime, day or night.
+            </div>
+            <button style={{ 
+              background: '#FFD400', 
+              color: '#23282B', 
+              fontWeight: 600, 
+              fontSize: '18px', 
+              padding: '16px 32px', 
+              borderRadius: '8px', 
+              border: 'none', 
+              cursor: 'pointer', 
+              width: 'fit-content', 
+              boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+              fontFamily: 'Plus Jakarta Sans'
+            }}>
+              Start free trial
+            </button>
+          </div>
+          
+          {/* Right: Image */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '700px', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            paddingRight: '32px' 
+          }}>
+            <img
+              src="/images/garage-door.jpg"
+              alt="Garage Door Scheduling Software Interface"
+              style={{ 
+                width: '100%', 
+                maxWidth: '600px', 
+                borderRadius: '24px', 
+                boxShadow: '0 4px 32px rgba(0,0,0,0.10)' 
+              }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </section>
+        
         
         <Integrations />
         <FaqSection />

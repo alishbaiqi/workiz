@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isOverHero, setIsOverHero] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -68,13 +69,13 @@ const Navbar = () => {
       <div className="flex items-center">
         {/* Logo */}
         <Link href="/" className="relative flex items-center justify-center cursor-pointer" style={{ height: "45px", width: "165px" }}>
-          <img src="/crm.png" alt="CRM Logo" className="h-full w-auto object-contain" style={{maxHeight: '45px', maxWidth: '165px'}} />
+          <img src="/image.jpeg" alt="Your Logo" className="h-full w-auto object-contain" style={{maxHeight: '45px', maxWidth: '165px'}} onError={(e) => {console.log('Logo failed to load:', e.target.src)}} />
         </Link>
 
-        {/* Navigation Links */}
-        <div className="flex items-center gap-7 ml-7">
+        {/* Navigation Links - Desktop */}
+        <div className="hidden lg:flex items-center gap-7 ml-7">
           <div
-            className="flex items-center gap-5 text-white text-[17px] font-normal"
+            className="flex items-center gap-5 text-white text-[15px] lg:text-[17px] font-normal"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 400 }}
           >
             {/* Industries with dropdown */}
@@ -134,7 +135,7 @@ const Navbar = () => {
                       </div>
                     </Link>
                     {/* Garage door */}
-                    <div className="flex items-start gap-4">
+                    <Link href="/industry/garage-door-repair" className="flex items-start gap-4 no-underline" onClick={handleDropdownLinkClick}>
                       <span className="mt-1" style={{width:32, height:40, display:'inline-block'}}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 160" width="32" height="40" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="__lottie_element_140"><rect width="130" height="160" x="0" y="0"></rect></clipPath></defs><g clipPath="url(#__lottie_element_140)"><g transform="matrix(1,0,0,1,65,96)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="#23282b" fillOpacity="1" d=" M17.25,2.8570001125335693 C17.25,4.464000225067139 15.902000427246094,5.714000225067139 14.375,5.714000225067139 C12.758000373840332,5.714000225067139 11.5,4.464000225067139 11.5,2.8570001125335693 C11.5,1.3389999866485596 12.758000373840332,0 14.375,0 C15.902000427246094,0 17.25,1.3389999866485596 17.25,2.8570001125335693z M-17.25,2.8570001125335693 C-17.25,1.3389999866485596 -15.991999626159668,0 -14.375,0 C-12.847999572753906,0 -11.5,1.3389999866485596 -11.5,2.8570001125335693 C-11.5,4.464000225067139 -12.847999572753906,5.714000225067139 -14.375,5.714000225067139 C-15.991999626159668,5.714000225067139 -17.25,4.464000225067139 -17.25,2.8570001125335693z M13.116999626159668,-5.714000225067139 C13.116999626159668,-5.714000225067139 -13.206999778747559,-5.714000225067139 -13.206999778747559,-5.714000225067139 C-13.206999778747559,-5.714000225067139 -10.871000289916992,-12.321000099182129 -10.871000289916992,-12.321000099182129 C-10.51200008392334,-13.482000350952148 -9.434000015258789,-14.28600025177002 -8.175999641418457,-14.28600025177002 C-8.175999641418457,-14.28600025177002 8.086000442504883,-14.28600025177002 8.086000442504883,-14.28600025177002 C9.343999862670898,-14.28600025177002 10.42199993133545,-13.482000350952148 10.781000137329102,-12.321000099182129 C10.781000137329102,-12.321000099182129 13.116999626159668,-5.714000225067139 13.116999626159668,-5.714000225067139z M-16.351999282836914,-14.196000099182129 C-16.351999282836914,-14.196000099182129 -19.496000289916992,-5.26800012588501 -19.496000289916992,-5.26800012588501 C-21.562000274658203,-4.375 -23,-2.321000099182129 -23,0 C-23,0 -23,17.14299964904785 -23,17.14299964904785 C-23,18.75 -21.742000579833984,20 -20.125,20 C-20.125,20 -17.25,20 -17.25,20 C-15.722999572753906,20 -14.375,18.75 -14.375,17.14299964904785 C-14.375,17.14299964904785 -14.375,12.857000350952148 -14.375,12.857000350952148 C-14.375,12.857000350952148 14.375,12.857000350952148 14.375,12.857000350952148 C14.375,12.857000350952148 14.375,17.14299964904785 14.375,17.14299964904785 C14.375,18.75 15.633000373840332,20 17.25,20 C17.25,20 20.125,20 20.125,20 C21.652000427246094,20 23,18.75 23,17.14299964904785 C23,17.14299964904785 23,0 23,0 C23,-2.321000099182129 21.472000122070312,-4.375 19.4060001373291,-5.26800012588501 C19.4060001373291,-5.26800012588501 16.261999130249023,-14.196000099182129 16.261999130249023,-14.196000099182129 C15.003999710083008,-17.67799949645996 11.770000457763672,-20 8.086000442504883,-20 C8.086000442504883,-20 -8.175999641418457,-20 -8.175999641418457,-20 C-11.859999656677246,-20 -15.093999862670898,-17.67799949645996 -16.351999282836914,-14.196000099182129z"></path></g></g><g transform="matrix(1,0,0,1,66,85.19999694824219)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="#23282b" fillOpacity="1" d=" M-28,-42.400001525878906 C-32.417999267578125,-42.400001525878906 -36,-38.81800079345703 -36,-34.400001525878906 C-36,-34.400001525878906 -36,24.399999618530273 -36,24.399999618530273 C-36,28.81800079345703 -32.417999267578125,32.400001525878906 -28,32.400001525878906 C-28,32.400001525878906 28,32.400001525878906 28,32.400001525878906 C32.417999267578125,32.400001525878906 36,28.81800079345703 36,24.399999618530273 C36,24.399999618530273 36,-34.400001525878906 36,-34.400001525878906 C36,-38.81800079345703 32.417999267578125,-42.400001525878906 28,-42.400001525878906 C28,-42.400001525878906 -28,-42.400001525878906 -28,-42.400001525878906z"></path></g></g><g transform="matrix(1,0,0,1,65.5999984741211,62.80099868774414)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="#ffffff" fillOpacity="1" d=" M6.921999931335449,-24.56999969482422 C2.630000114440918,-27.01099967956543 -2.630000114440918,-27.01099967956543 -6.921999931335449,-24.56999969482422 C-6.921999931335449,-24.56999969482422 -50.52199935913086,0.23000000417232513 -50.52199935913086,0.23000000417232513 C-57.24300003051758,4.052999973297119 -59.59199905395508,12.600000381469727 -55.76900100708008,19.320999145507812 C-51.94599914550781,26.04199981689453 -43.39899826049805,28.391000747680664 -36.678001403808594,24.56800079345703 C-36.678001403808594,24.56800079345703 0,3.7049999237060547 0,3.7049999237060547 C0,3.7049999237060547 36.678001403808594,24.56800079345703 36.678001403808594,24.56800079345703 C43.39899826049805,28.391000747680664 51.94599914550781,26.04199981689453 55.76900100708008,19.320999145507812 C59.59199905395508,12.600000381469727 57.24300003051758,4.052999973297119 50.52199935913086,0.23000000417232513 C50.52199935913086,0.23000000417232513 6.921999931335449,-24.56999969482422 6.921999931335449,-24.56999969482422z"></path></g></g><g transform="matrix(1,0,0,1,65.5999984741211,52.4010009765625)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="#23282b" fillOpacity="1" d=" M6.921999931335449,-24.56999969482422 C2.630000114440918,-27.01099967956543 -2.630000114440918,-27.01099967956543 -6.921999931335449,-24.56999969482422 C-6.921999931335449,-24.56999969482422 -50.52199935913086,0.23000000417232513 -50.52199935913086,0.23000000417232513 C-57.24300003051758,4.052999973297119 -59.59199905395508,12.600000381469727 -55.76900100708008,19.320999145507812 C-51.94599914550781,26.04199981689453 -43.39899826049805,28.391000747680664 -36.678001403808594,24.56800079345703 C-36.678001403808594,24.56800079345703 0,3.7049999237060547 0,3.7049999237060547 C0,3.7049999237060547 36.678001403808594,24.56800079345703 36.678001403808594,24.56800079345703 C43.39899826049805,28.391000747680664 51.94599914550781,26.04199981689453 55.76900100708008,19.320999145507812 C59.59199905395508,12.600000381469727 57.24300003051758,4.052999973297119 50.52199935913086,0.23000000417232513 C50.52199935913086,0.23000000417232513 6.921999931335449,-24.56999969482422 6.921999931335449,-24.56999969482422z"></path></g></g></g></svg>
                       </span>
@@ -142,7 +143,7 @@ const Navbar = () => {
                         <div className="font-bold text-lg text-gray-900">Garage door</div>
                         <div className="text-gray-700 text-sm leading-snug">Streamline operations and make your garage door business work for you</div>
                       </div>
-                    </div>
+                    </Link>
                     {/* Locksmith */}
                     <div className="flex items-start gap-4">
                       <span className="mt-1" style={{width:32, height:40, display:'inline-block'}}>
@@ -396,39 +397,91 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Buttons */}
-      <div className="flex items-center gap-2">
+      {/* Mobile Menu Button */}
+      <button
+        className="lg:hidden text-white p-2"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3 12h18M3 6h18M3 18h18"} />
+        </svg>
+      </button>
+
+      {/* Buttons - Desktop */}
+      <div className="hidden lg:flex items-center gap-2">
         <button
-          className="rounded-md font-semibold transition border border-white"
+          className="rounded-md font-semibold transition border border-white text-[14px] lg:text-[17px] px-[12px] lg:px-[17px] py-[8px] lg:py-[11px]"
           style={{
             backgroundColor: "#3B4B52",
             color: "#FFFFFF",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             margin: "6px 0 0 0",
-            padding: "11px 17px",
             fontWeight: 700,
-            fontSize: "17px",
             lineHeight: "1",
           }}
         >
           Log in
         </button>
         <button
-          className="rounded-md font-bold shadow hover:bg-yellow-400 transition"
+          className="rounded-md font-bold shadow hover:bg-yellow-400 transition text-[14px] lg:text-[17px] px-[10px] lg:px-[13px] py-[9px] lg:py-[12px]"
           style={{
             backgroundColor: "#FFD400",
             color: "#23282B",
             fontFamily: "'Plus Jakarta Sans', sans-serif, bold",
             margin: "6px 0 0 0",
-            padding: "12px 13px",
             fontWeight: 500,
-            fontSize: "17px",
             lineHeight: "1",
           }}
         >
           Free trial
         </button>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-[#1a1d22] border-t border-white/10 p-4 z-40 mobile-menu">
+          <div className="flex flex-col gap-4">
+            <div className="text-white font-normal text-[16px]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              Industries
+            </div>
+            <div className="text-white font-normal text-[16px]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              Features
+            </div>
+            <div className="text-white font-normal text-[16px]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              Resources
+            </div>
+            <div className="text-white font-normal text-[16px]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              Pricing
+            </div>
+            <div className="border-t border-white/20 pt-4 flex flex-col gap-3">
+              <button
+                className="rounded-md font-semibold transition border border-white w-full py-3"
+                style={{
+                  backgroundColor: "#3B4B52",
+                  color: "#FFFFFF",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "16px",
+                }}
+              >
+                Log in
+              </button>
+              <button
+                className="rounded-md font-bold shadow hover:bg-yellow-400 transition w-full py-3"
+                style={{
+                  backgroundColor: "#FFD400",
+                  color: "#23282B",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "16px",
+                }}
+              >
+                Free trial
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

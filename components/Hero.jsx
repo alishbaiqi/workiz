@@ -8,7 +8,7 @@ const avatars = [
 
 export default function Hero() {
   return (
-    <div className="min-h-screen w-full relative pb-12" style={{marginTop: '-80px', paddingTop: '80px'}}>
+    <div className="min-h-screen w-full relative pb-12" style={{marginTop: '-80px', paddingTop: '170px'}}>
       {/* Video Background - covers navbar, hero section, and cards */}
       <video
         autoPlay
@@ -29,9 +29,9 @@ export default function Hero() {
 
       {/* Hero Section */}
       <div className="relative z-20 w-full flex flex-col justify-center items-center px-4" style={{minHeight: '100vh'}}>
-        <div className="max-w-5xl w-full flex flex-col items-center justify-center text-center mt-12 mb-20">
+        <div className="max-w-5xl w-full flex flex-col items-center justify-center text-center mt-8 mb-20">
           <h1
-            className="text-white font-extrabold text-[80px] leading-[1.15] mb-4 z-10"
+            className="text-white font-extrabold text-[32px] sm:text-[48px] md:text-[64px] lg:text-[80px] leading-[1.15] mb-4 z-10"
             style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               overflow: "visible",
@@ -42,14 +42,14 @@ export default function Hero() {
           </h1>
 
           <div
-            className="text-white text-[26px] font-normal mb-2 whitespace-nowrap overflow-x-auto"
+            className="text-white text-[16px] sm:text-[20px] md:text-[24px] lg:text-[26px] font-normal mb-2"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             The leading platform for field service teams, trusted by over 120,000 pros.
           </div>
 
           <div
-            className="text-white text-[26px] font-bold mb-18 whitespace-nowrap overflow-x-auto"
+            className="text-white text-[16px] sm:text-[20px] md:text-[24px] lg:text-[26px] font-bold mb-18"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Schedule jobs, dispatch, invoice, track performance, and get paid — all in one place.
@@ -57,13 +57,13 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
             <button
-              className="rounded-md border border-white text-white text-[22px] font-bold px-[40px] py-[18px] bg-transparent hover:bg-[#23282b] transition"
+              className="rounded-md border border-white text-white text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-bold px-[24px] sm:px-[32px] md:px-[40px] py-[14px] sm:py-[16px] md:py-[18px] bg-transparent hover:bg-[#23282b] transition w-full sm:w-auto"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               Product overview
             </button>
             <button
-              className="rounded-md text-[22px] font-bold px-[40px] py-[18px] transition"
+              className="rounded-md text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-bold px-[24px] sm:px-[32px] md:px-[40px] py-[14px] sm:py-[16px] md:py-[18px] transition w-full sm:w-auto"
               style={{
                 backgroundColor: "#FFD400",
                 color: "#23282B",
