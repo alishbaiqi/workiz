@@ -69,7 +69,7 @@ const Navbar = () => {
       <div className="flex items-center">
         {/* Logo */}
         <Link href="/" className="relative flex items-center justify-center cursor-pointer" style={{ height: "45px", width: "165px" }}>
-          <img src="/image.jpeg" alt="Your Logo" className="h-full w-auto object-contain" style={{maxHeight: '45px', maxWidth: '165px'}} onError={(e) => {console.log('Logo failed to load:', e.target.src)}} />
+          <img src="/new-crm.png" alt="Your Logo" className="h-full w-auto object-contain" style={{maxHeight: '45px', maxWidth: '165px'}} onError={(e) => {console.log('Logo failed to load:', e.target.src)}} />
         </Link>
 
         {/* Navigation Links - Desktop */}

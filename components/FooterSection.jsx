@@ -130,7 +130,7 @@ export default function FooterSection() {
         {/* Bottom row: Copyright and Workiz logo */}
         <div className="flex flex-row items-center justify-between max-w-7xl mx-auto w-full px-4 pb-4">
           <div className="text-[#b0b7bc] text-lg">©2025 Workiz Inc.</div>
-          <img src="/images/crm.png" alt="Workiz Logo" className="h-12 w-auto" />
+          <img src="/new-crm.png" alt="Workiz Logo" className="h-12 w-auto" />
         </div>
       </div>
     </>
