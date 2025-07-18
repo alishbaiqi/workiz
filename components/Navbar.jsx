@@ -145,7 +145,8 @@ const Navbar = () => {
                       </div>
                     </Link>
                     {/* Locksmith */}
-                    <div className="flex items-start gap-4">
+                    <Link href="/industry/locksmith" className="flex items-start gap-4 no-underline" onClick={handleDropdownLinkClick}>
+
                       <span className="mt-1" style={{width:32, height:40, display:'inline-block'}}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113 160" width="32" height="40" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="__lottie_element_153"><rect width="113" height="160" x="0" y="0"></rect></clipPath></defs><g clipPath="url(#__lottie_element_153)"><g transform="matrix(1,0,0,1,39.79999542236328,58.367000579833984)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="#23282B" fillOpacity="1" d=" M0,-38.367000579833984 C-21.429000854492188,-38.367000579833984 -38.79999923706055,-20.996000289916992 -38.79999923706055,0.43299999833106995 C-38.79999923706055,0.43299999833106995 -38.79999923706055,34.361000061035156 -38.79999923706055,34.361000061035156 C-38.79999923706055,37.334999084472656 -35.67100143432617,39.26900100708008 -33.01100158691406,37.93899917602539 C-33.01100158691406,37.93899917602539 -18.611000061035156,30.73900032043457 -18.611000061035156,30.73900032043457 C-17.256000518798828,30.06100082397461 -16.399999618530273,28.676000595092773 -16.399999618530273,27.160999298095703 C-16.399999618530273,27.160999298095703 -16.399999618530273,0.43299999833106995 -16.399999618530273,0.43299999833106995 C-16.399999618530273,-8.62399959564209 -9.057000160217285,-15.967000007629395 0,-15.967000007629395 C9.057000160217285,-15.967000007629395 16.399999618530273,-8.62399959564209 16.399999618530273,0.43299999833106995 C16.399999618530273,0.43299999833106995 16.399999618530273,3.632999897003174 16.399999618530273,3.632999897003174 C16.399999618530273,5.8420000076293945 18.19099998474121,7.632999897003174 20.399999618530273,7.632999897003174 C20.399999618530273,7.632999897003174 34.79999923706055,7.632999897003174 34.79999923706055,7.632999897003174 C37.00899887084961,7.632999897003174 38.79999923706055,5.8420000076293945 38.79999923706055,3.632999897003174 C38.79999923706055,3.632999897003174 38.79999923706055,0.43299999833106995 38.79999923706055,0.43299999833106995 C38.79999923706055,-20.996000289916992 21.429000854492188,-38.367000579833984 0,-38.367000579833984z"></path></g></g><g transform="matrix(1,0,0,1,69.49999237060547,104.5)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="#23282b" fillOpacity="1" d=" M0.5,-16.15399932861328 C-4.870999813079834,-16.15399932861328 -9.22599983215332,-11.8149995803833 -9.22599983215332,-6.461999893188477 C-9.22599983215332,-3.2980000972747803 -7.704999923706055,-0.4869999885559082 -5.35099983215332,1.281999945640564 C-5.35099983215332,1.281999945640564 -7.818999767303467,15.041999816894531 -7.818999767303467,15.041999816894531 C-8.008999824523926,16.10300064086914 -7.190000057220459,17.07699966430664 -6.109000205993652,17.07699966430664 C-6.109000205993652,17.07699966430664 7.743000030517578,17.07699966430664 7.743000030517578,17.07699966430664 C8.845000267028809,17.07699966430664 9.666999816894531,16.069000244140625 9.442999839782715,14.994000434875488 C9.442999839782715,14.994000434875488 6.547999858856201,1.1299999952316284 6.547999858856201,1.1299999952316284 C8.788999557495117,-0.6460000276565552 10.22599983215332,-3.38700008392334 10.22599983215332,-6.461999893188477 C10.22599983215332,-11.8149995803833 5.870999813079834,-16.15399932861328 0.5,-16.15399932861328z M-39,-17.231000900268555 C-39,-23.179000854492188 -34.1619987487793,-28 -28.194000244140625,-28 C-28.194000244140625,-28 28.194000244140625,-28 28.194000244140625,-28 C34.1619987487793,-28 39,-23.179000854492188 39,-17.231000900268555 C39,-17.231000900268555 39,17.231000900268555 39,17.231000900268555 C39,23.179000854492188 34.1619987487793,28 28.194000244140625,28 C28.194000244140625,28 -28.194000244140625,28 -28.194000244140625,28 C-34.1619987487793,28 -39,23.179000854492188 -39,17.231000900268555 C-39,17.231000900268555 -39,-17.231000900268555 -39,-17.231000900268555z"></path></g></g></g></svg>
                       </span>
@@ -153,7 +154,7 @@ const Navbar = () => {
                         <div className="font-bold text-lg text-gray-900">Locksmith</div>
                         <div className="text-gray-700 text-sm leading-snug">Get paid in the field faster and win more locksmith jobs</div>
                       </div>
-                    </div>
+                    </Link>
                     {/* Junk removal */}
                     <div className="flex items-start gap-4">
                       <span className="mt-1" style={{width:32, height:40, display:'inline-block'}}>
@@ -186,7 +187,7 @@ const Navbar = () => {
                       </div>
                     </div>
                     {/* Towing Near Me */}
-                    <Link href={`/industry/towing-near-me`} className="flex items-start gap-4 no-underline" onClick={handleDropdownLinkClick}>
+                    <Link href="/industry/towing-near-me" className="flex items-start gap-4 no-underline" onClick={handleDropdownLinkClick}>
                       <span className="mt-1" style={{width:32, height:40, display:'inline-block'}}>
                         <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="40" rx="8" fill="#F3F4F6"/><path d="M8 32L24 8" stroke="#23282B" strokeWidth="2"/></svg>
                       </span>
@@ -195,7 +196,7 @@ const Navbar = () => {
                       </div>
                     </Link>
                     {/* Handyman */}
-                    <Link href={`/industry/handyman`} className="flex items-start gap-4 no-underline" onClick={handleDropdownLinkClick}>
+                    <Link href="/industry/handyman" className="flex items-start gap-4 no-underline" onClick={handleDropdownLinkClick}>
                       <span className="mt-1" style={{width:32, height:40, display:'inline-block'}}>
                         <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="40" rx="8" fill="#F3F4F6"/><circle cx="16" cy="20" r="8" stroke="#23282B" strokeWidth="2"/></svg>
                       </span>
@@ -204,7 +205,7 @@ const Navbar = () => {
                       </div>
                     </Link>
                     {/* Garage Door Repair */}
-                    <Link href={`/industry/garage-door-repair`} className="flex items-start gap-4 no-underline" onClick={handleDropdownLinkClick}>
+                    <Link href="/industry/garage-door-repair" className="flex items-start gap-4 no-underline" onClick={handleDropdownLinkClick}>
                       <span className="mt-1" style={{width:32, height:40, display:'inline-block'}}>
                         <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="40" rx="8" fill="#F3F4F6"/><rect x="8" y="16" width="16" height="8" stroke="#23282B" strokeWidth="2"/></svg>
                       </span>

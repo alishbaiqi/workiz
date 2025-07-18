@@ -8,7 +8,7 @@ import FooterSection   from '@/components/FooterSection';
 
 const validIndustries = [
   'towing-near-me', 'handyman', 'garage-door-repair', 'chimney-sweep', 'carpet-cleaning',
-  'locksmith-near-me', 'dryervent-cleaning', 'air-duct-cleaning', 'gate-repair', 'plumbers-near-me',
+  'locksmith-near-me', 'locksmith', 'dryervent-cleaning', 'air-duct-cleaning', 'gate-repair', 'plumbers-near-me',
   'movers-nearme', 'appliance-repair', 'sliding-door-repair', 'pestcontrol', 'roofing',
   'fire-damage-restoration', 'water-damage-restoration', 'mold-removal-nearme', 'roadside-tows', 'allusa-towing', 'hvac', 'plumbing', 'electricians',
   // Add other slugs as needed
@@ -25,7 +25,7 @@ export default function IndustryPage({ params }) {
   if (industry === 'hvac') {
     return (
       <>
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '500px', width: '100%', marginTop: '80px', border: 'none', boxShadow: 'none', background: '#fff' }} className="flex flex-col md:flex-row">
+        <div style={{ display: 'flex', flexDirection: 'row', minHeight: '500px', width: '100%', marginTop: '80px', border: 'none', boxShadow: 'none', background: '#fff' }} className="flex flex-row">
           {/* Left Side */}
           <div style={{ background: '#FFD400', flex: 1, padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }} className="p-6 sm:p-8 md:p-12 lg:p-16">
             <div style={{ color: '#23282B', fontWeight: 600, marginBottom: 16 }} className="text-sm sm:text-base">HVAC SOFTWARE</div>
@@ -3178,8 +3178,808 @@ export default function IndustryPage({ params }) {
             />
           </div>
         </section>
+         {/* Communications Suite Section */}
+         <section style={{ width: '100%', display: 'flex', gap: '48px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', background: '#f8fafc', border: 'none', boxShadow: 'none', padding: '80px 0' }}>
+          {/* Left: Text Content */}
+          <div style={{ flex: 1, minWidth: '340px', maxWidth: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px', paddingLeft: '32px' }}>
+            <div style={{ color: '#22c55e', fontWeight: 700, fontSize: '14px', letterSpacing: '1px', marginBottom: '8px', fontFamily: 'Plus Jakarta Sans', textTransform: 'uppercase' }}>
+              COMMUNICATIONS SUITE
+            </div>
+            <div style={{ color: '#23282B', fontWeight: 700, fontSize: '48px', marginBottom: '16px', fontFamily: 'Plus Jakarta Sans', lineHeight: 1.1 }}>
+              A new level of customer experience
+            </div>
+            <div style={{ color: '#23282B', fontSize: '18px', fontWeight: 400, marginBottom: '32px', lineHeight: 1.6 }}>
+              Experience enhanced communication, better response times, and superior customer service with our integrated phone system. Improve your bottom line by sending automatic reminders, special deals on garage door services to clients, follow-ups for garage door estimates and invoices, and get notified of missed calls or voicemails.
+            </div>
+            <button style={{ background: '#FFD400', color: '#23282B', fontWeight: 600, fontSize: '18px', padding: '16px 32px', borderRadius: '8px', border: 'none', cursor: 'pointer', width: 'fit-content', boxShadow: '0 2px 8px rgba(0,0,0,0.06)', fontFamily: 'Plus Jakarta Sans' }}>
+              Start free trial
+            </button>
+          </div>
+          
+          {/* Right: Interface Image */}
+          <div style={{ flex: 1, minWidth: '340px', maxWidth: '700px', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingRight: '32px' }}>
+            <img src="/images/communications.webp" alt="Communications Suite Interface" style={{ width: '100%', maxWidth: '600px', borderRadius: '24px', boxShadow: '0 4px 32px rgba(0,0,0,0.10)' }} loading="lazy" decoding="async" />
+          </div>
+        
+        </section>
+        {/* Online Booking Section */}
+<section style={{ width: '100%', display: 'flex', gap: '48px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', background: '#fff', border: 'none', boxShadow: 'none', padding: '80px 0' }}>
+  {/* Left: Text Content */}
+  <div style={{ flex: 1, minWidth: '340px', maxWidth: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px', paddingLeft: '32px' }}>
+    <div style={{ color: '#3b82f6', fontWeight: 700, fontSize: '14px', letterSpacing: '1px', marginBottom: '8px', fontFamily: 'Plus Jakarta Sans', textTransform: 'uppercase' }}>
+      ONLINE BOOKING
+    </div>
+    <div style={{ color: '#23282B', fontWeight: 700, fontSize: '48px', marginBottom: '16px', fontFamily: 'Plus Jakarta Sans', lineHeight: 1.1 }}>
+      Win more garage door jobs
+    </div>
+    <div style={{ color: '#23282B', fontSize: '18px', fontWeight: 400, marginBottom: '32px', lineHeight: 1.6 }}>
+      Turn leads into garage door jobs, get paid in advance, and increase bookings by 30% with the Workiz Online Booking widget. Make it easier for customers to book your garage door services from Google, your website, social media, or anywhere with your link.
+    </div>
+    <a href="#" style={{ color: '#23282B', fontWeight: 600, fontSize: '18px', textDecoration: 'none', fontFamily: 'Plus Jakarta Sans', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+      Learn More →
+    </a>
+  </div>
+  
+  {/* Right: Image */}
+  <div style={{ flex: 1, minWidth: '340px', maxWidth: '700px', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingRight: '32px' }}>
+    <img 
+      src="/images/online.webp" 
+      alt="Online Booking Interface for Garage Door Services" 
+      style={{ width: '100%', maxWidth: '600px', borderRadius: '24px', boxShadow: '0 4px 32px rgba(0,0,0,0.10)' }} 
+      loading="lazy" 
+      decoding="async" 
+    />
+  </div>
+</section>
+{/* Price Book & Sales Proposals Section */}
+<section style={{ width: '100%', display: 'flex', gap: '48px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', background: '#f8fafc', border: 'none', boxShadow: 'none', padding: '80px 0' }}>
+  {/* Left: Text Content */}
+  <div style={{ flex: 1, minWidth: '340px', maxWidth: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px', paddingLeft: '32px' }}>
+    <div style={{ color: '#22c55e', fontWeight: 700, fontSize: '14px', letterSpacing: '1px', marginBottom: '8px', fontFamily: 'Plus Jakarta Sans', textTransform: 'uppercase' }}>
+      PRICE BOOK & SALES PROPOSALS
+    </div>
+    <div style={{ color: '#23282B', fontWeight: 700, fontSize: '48px', marginBottom: '16px', fontFamily: 'Plus Jakarta Sans', lineHeight: 1.1 }}>
+      Sales tools
+    </div>
+    <div style={{ color: '#23282B', fontSize: '18px', fontWeight: 400, marginBottom: '32px', lineHeight: 1.6 }}>
+      Set your garage door team up for success with all the tools you need to upsell and increase your revenue. Offer the best customer service with a beautifully designed price book and give your clients an accurate estimate with our sales proposals.
+    </div>
+    <button style={{ background: '#FFD400', color: '#23282B', fontWeight: 600, fontSize: '18px', padding: '16px 32px', borderRadius: '8px', border: 'none', cursor: 'pointer', width: 'fit-content', boxShadow: '0 2px 8px rgba(0,0,0,0.06)', fontFamily: 'Plus Jakarta Sans' }}>
+      Start free trial
+    </button>
+  </div>
+  
+  {/* Right: Image */}
+  <div style={{ flex: 1, minWidth: '340px', maxWidth: '700px', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingRight: '32px' }}>
+    <img 
+      src="/images/pricebook1.webp" 
+      alt="Price Book and Sales Proposals Interface showing garage door components and pricing options" 
+      style={{ width: '100%', maxWidth: '600px', borderRadius: '24px', boxShadow: '0 4px 32px rgba(0,0,0,0.10)' }} 
+      loading="lazy" 
+      decoding="async" 
+    />
+  </div>
+</section>
+{/* WorkizPay Section */}
+<section style={{ width: '100%', display: 'flex', gap: '48px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', background: '#f6f8fa', border: 'none', boxShadow: 'none', padding: '80px 0' }}>
+  {/* Left: Image */}
+  <div style={{ flex: 1, minWidth: '340px', maxWidth: '700px', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingLeft: '32px' }}>
+    <img 
+      src="/images/electric-field.webp" 
+      alt="WorkizPay payment interface showing invoice and card reader with multiple payment options" 
+      style={{ width: '100%', maxWidth: '600px', borderRadius: '24px', boxShadow: '0 4px 32px rgba(0,0,0,0.10)' }} 
+      loading="lazy" 
+      decoding="async" 
+    />
+  </div>
+  
+  {/* Right: Text Content */}
+  <div style={{ flex: 1, minWidth: '340px', maxWidth: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px', paddingRight: '32px' }}>
+    <div style={{ color: '#22c55e', fontWeight: 700, fontSize: '14px', letterSpacing: '1px', marginBottom: '8px', fontFamily: 'Plus Jakarta Sans', textTransform: 'uppercase' }}>
+      WORKIZ PAY
+    </div>
+    <div style={{ color: '#23282B', fontWeight: 700, fontSize: '48px', marginBottom: '16px', fontFamily: 'Plus Jakarta Sans', lineHeight: 1.1 }}>
+      Payments made easy
+    </div>
+    <div style={{ color: '#23282B', fontSize: '18px', fontWeight: 400, marginBottom: '32px', lineHeight: 1.6 }}>
+      Get all your financial needs under one umbrella with WorkizPay. Benefit from quicker in-field payments through our handy card readers, so you'll never miss a payment again. Secure more high ticket garage door jobs with Sunbit's consumer financing integrated in the Workiz platform.
+    </div>
+    <a href="#" style={{ color: '#23282B', fontWeight: 600, fontSize: '18px', textDecoration: 'none', fontFamily: 'Plus Jakarta Sans', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+      Learn more →
+    </a>
+  </div>
+</section>
+{/* Ad Tracking Section */}
+<section style={{ width: '100%', display: 'flex', gap: '48px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', background: '#fff', border: 'none', boxShadow: 'none', padding: '80px 0' }}>
+  {/* Left: Text Content */}
+  <div style={{ flex: 1, minWidth: '340px', maxWidth: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px', paddingLeft: '32px' }}>
+    <div style={{ color: '#3b82f6', fontWeight: 700, fontSize: '14px', letterSpacing: '1px', marginBottom: '8px', fontFamily: 'Plus Jakarta Sans', textTransform: 'uppercase' }}>
+      AD TRACKING
+    </div>
+    <div style={{ color: '#23282B', fontWeight: 700, fontSize: '48px', marginBottom: '16px', fontFamily: 'Plus Jakarta Sans', lineHeight: 1.1 }}>
+      Increase your marketing efforts
+    </div>
+    <div style={{ color: '#23282B', fontSize: '18px', fontWeight: 400, marginBottom: '32px', lineHeight: 1.6 }}>
+      Boost your ROI and optimize your marketing strategy with ad optimization. Save up to 16% on your marketing budget and reallocate funds to enhance your garage door business. Our ad source analysis pinpoints which sources drive maximum conversions allowing data-informed decision-making.
+    </div>
+    <button style={{ background: '#FFD400', color: '#23282B', fontWeight: 600, fontSize: '18px', padding: '16px 32px', borderRadius: '8px', border: 'none', cursor: 'pointer', width: 'fit-content', boxShadow: '0 2px 8px rgba(0,0,0,0.06)', fontFamily: 'Plus Jakarta Sans' }}>
+      Start free trial
+    </button>
+  </div>
+  
+  {/* Right: Image */}
+  <div style={{ flex: 1, minWidth: '340px', maxWidth: '700px', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingRight: '32px' }}>
+    <img 
+      src="/images/ad-tracking.webp" 
+      alt="Marketing analytics dashboard showing ad tracking performance with ROI metrics for garage door business" 
+      style={{ width: '100%', maxWidth: '600px', borderRadius: '24px', boxShadow: '0 4px 32px rgba(0,0,0,0.10)' }} 
+      loading="lazy" 
+      decoding="async" 
+    />
+  </div>
+</section>
+ {/* Multi-day Jobs Section */}
+ <section style={{ 
+          width: '100%', 
+          display: 'flex', 
+          gap: '48px', 
+          alignItems: 'center', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center', 
+          background: '#f6f8fa', 
+          border: 'none', 
+          boxShadow: 'none', 
+          padding: '64px 0' 
+        }}>
+          {/* Left: Text Content */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '600px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'center', 
+            gap: '12px', 
+            paddingLeft: '32px' 
+          }}>
+            <div style={{ 
+              color: '#f25c4d', 
+              fontWeight: 700, 
+              fontSize: '14px', 
+              letterSpacing: '1px', 
+              marginBottom: '8px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              textTransform: 'uppercase' 
+            }}>
+              MULTI-DAY JOBS
+            </div>
+            <div style={{ 
+              color: '#23282B', 
+              fontWeight: 700, 
+              fontSize: '40px', 
+              marginBottom: '8px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              lineHeight: 1.1 
+            }}>
+              Complex plumbing jobs managed efficiently
+            </div>
+            <div style={{ 
+              color: '#23282B', 
+              fontSize: '18px', 
+              fontWeight: 400, 
+              marginBottom: '24px', 
+              lineHeight: 1.4 
+            }}>
+              Track progress of multi-day plumbing jobs with tasks. You can assign more than one technician to a task and ensure efficient collaboration and job management. With the progress bar you will never miss a step and get more jobs done on time.
+            </div>
+            <a href="#" style={{ 
+              color: '#23282B', 
+              fontWeight: 500, 
+              fontSize: '18px', 
+              textDecoration: 'none', 
+              marginTop: '4px', 
+              fontFamily: 'Plus Jakarta Sans', 
+              display: 'inline-block' 
+            }}>
+              Learn More →
+            </a>
+          </div>
+          
+          {/* Right: Image */}
+          <div style={{ 
+            flex: 1, 
+            minWidth: '340px', 
+            maxWidth: '700px', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            paddingRight: '32px' 
+          }}>
+            <img
+              src="/images/multiday-jobs.webp"
+              alt="Multi-day Jobs Calendar Interface"
+              style={{ 
+                width: '100%', 
+                maxWidth: '600px', 
+                borderRadius: '24px', 
+                boxShadow: '0 4px 32px rgba(0,0,0,0.10)' 
+              }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </section>
         
         
+        
+        
+        <Integrations />
+        <FaqSection />
+        <FooterSection />
+      </>
+    );
+  }
+
+  if (industry === 'locksmith') {
+    const [isLocksmithVideoOpen, setIsLocksmithVideoOpen] = useState(false);
+    
+    return (
+      <>
+        {/* Breadcrumb Navigation */}
+        <div style={{ background: '#f8fafc', padding: '16px 0', marginTop: '80px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '32px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#6b7280' }}>
+            <a href="/" style={{ color: '#6b7280', textDecoration: 'none' }}>Home</a>
+            <span>›</span>
+            <a href="/industry" style={{ color: '#6b7280', textDecoration: 'none' }}>Industries</a>
+            <span>›</span>
+            <span style={{ color: '#23282B', fontWeight: 500 }}>Locksmith</span>
+          </div>
+        </div>
+
+        {/* Hero Section */}
+        <div style={{ display: 'flex', flexDirection: 'row', minHeight: '500px', width: '100%', border: 'none', boxShadow: 'none', background: '#fff' }} className="flex flex-row">
+          {/* Left Side - Yellow Background */}
+          <div style={{ background: '#FFD400', flex: 1, padding: '48px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ color: '#23282B', fontWeight: 600, marginBottom: 16, letterSpacing: 2, fontSize: '14px' }}>LOCKSMITH SOFTWARE</div>
+            
+            <h1 style={{ fontWeight: 800, lineHeight: 1.1, marginBottom: 24, fontSize: '3.5rem', color: '#23282B' }}>
+              Grow your business<br />
+              with the <span style={{ background: '#fff', padding: '0 8px', borderRadius: '4px', display: 'inline-block' }}>#1</span><br />
+              <span style={{ background: '#fff', padding: '0 8px', borderRadius: '4px', display: 'inline-block' }}>locksmith software</span>
+            </h1>
+            
+            <p style={{ color: '#23282B', marginBottom: 32, maxWidth: 600, fontSize: '1.125rem', lineHeight: 1.6 }}>
+              The all-in-one solution built for your locksmith teams and trusted by over 120,000 pros. Streamline operations, win more jobs and deliver the best customer service.
+            </p>
+            
+            <button style={{ background: '#23282B', color: '#FFD400', fontWeight: 600, borderRadius: 8, border: 'none', marginBottom: 32, cursor: 'pointer', width: 'fit-content', fontSize: '1.125rem', padding: '16px 32px' }}>
+              Book a demo
+            </button>
+            
+            {/* Rating Section */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ background: '#3b82f6', padding: '6px', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: 'white', fontSize: '12px', fontWeight: 'bold' }}>📊</span>
+                </div>
+                <div>
+                  <div style={{ color: '#23282B', fontWeight: 600, fontSize: '14px' }}>Capterra</div>
+                  <div style={{ color: '#23282B', fontSize: '14px' }}>★★★★☆</div>
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ background: '#ef4444', padding: '6px', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: 'white', fontSize: '12px', fontWeight: 'bold' }}>💬</span>
+                </div>
+                <div>
+                  <div style={{ color: '#23282B', fontWeight: 600, fontSize: '14px' }}>Software Advice</div>
+                  <div style={{ color: '#23282B', fontSize: '14px' }}>★★★★☆</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Locksmith Image */}
+          <div style={{ flex: 1, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+            <img src="/images/jacob.webp" alt="Jacob Szender - Professional Locksmith" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            
+            {/* Testimonial Overlay */}
+            <div style={{
+              position: 'absolute',
+              bottom: '40px',
+              left: '0px',
+              width: '300px',
+              background: 'rgba(0,0,0,0.8)',
+              borderRadius: '8px',
+              padding: '16px',
+              color: 'white'
+            }}>
+              <h3 style={{ fontSize: '1.125rem', fontWeight: 'bold', marginBottom: '4px', color: 'white' }}>
+                Jacob Szender
+              </h3>
+              <p style={{ fontSize: '0.875rem', marginBottom: '12px', color: '#ccc' }}>
+                CEO of Sure Lock & Key
+              </p>
+              <button 
+                onClick={() => setIsLocksmithVideoOpen(true)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#FFD400',
+                  fontSize: '0.875rem',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                <span style={{ fontSize: '1rem' }}>▶</span>
+                Watch testimonial
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Win 3X More Jobs Section */}
+        <section style={{ background: '#23282B', padding: '24px 0', width: '100%' }}>
+          <div style={{ 
+            maxWidth: '1400px', 
+            margin: '0 auto', 
+            paddingLeft: '32px', 
+            paddingRight: '32px', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '16px'
+          }}>
+            
+            {/* Left: Win 3X more jobs */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                background: 'linear-gradient(135deg, #E91E63, #9C27B0)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                  <path d="M13 2L3 14h7v8l10-12h-7z"/>
+                </svg>
+              </div>
+              <div style={{ 
+                fontSize: '2rem', 
+                fontWeight: 'bold', 
+                color: 'white',
+                fontFamily: "'Plus Jakarta Sans', sans-serif"
+              }}>
+                Win 3X more jobs
+              </div>
+            </div>
+
+            {/* Right: Award badges */}
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+              <img src="/images/badge-1.png" alt="Leader 2025" style={{ height: '55px', width: 'auto' }} />
+              <img src="/images/bdge-2.png" alt="High Performer Winter 2024" style={{ height: '55px', width: 'auto' }} />
+              <img src="/images/badge-3.png" alt="Leader 2025" style={{ height: '55px', width: 'auto' }} />
+              <img src="/images/badge-4.png" alt="Leader Winter 2024" style={{ height: '55px', width: 'auto' }} />
+              <img src="/images/badge-5.png" alt="Leader Winter 2024" style={{ height: '55px', width: 'auto' }} />
+            </div>
+          </div>
+        </section>
+
+       
+
+        {/* Video Modal */}
+        {isLocksmithVideoOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+            onClick={() => setIsLocksmithVideoOpen(false)}
+          >
+            <div
+              className="bg-black rounded-xl overflow-hidden shadow-lg relative"
+              style={{ width: "90vw", maxWidth: 640 }}
+              onClick={e => e.stopPropagation()}
+            >
+              <iframe
+                width="640"
+                height="360"
+                src="https://www.youtube.com/embed/lhZe4uCEi0s?autoplay=1&color=ffd400&rel=0"
+                title="Locksmith Testimonial Video"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              <button
+                className="absolute top-2 right-2 bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition"
+                onClick={() => setIsLocksmithVideoOpen(false)}
+              >
+                <svg width="24" height="24" fill="none" stroke="#23282b" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M6 6l12 12M6 18L18 6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+         {/* Feature Cards Section - Tipping & Online Booking */}
+         <section style={{ background: '#fff', padding: '80px 0', width: '100%' }}>
+          <div style={{ 
+            maxWidth: '1400px', 
+            margin: '0 auto', 
+            paddingLeft: '32px', 
+            paddingRight: '32px', 
+            display: 'flex', 
+            gap: '32px',
+            flexWrap: 'wrap',
+            alignItems: 'stretch'
+          }}>
+            
+            {/* Left Card - Tipping */}
+            <div style={{ 
+              background: 'linear-gradient(169.48deg, #096187 5.7%, #23282B 98.96%)',
+              borderRadius: '16px', 
+              flex: '1',
+              minWidth: '500px',
+              overflow: 'hidden',
+              height: '500px',
+              display: 'flex',
+              flexDirection: 'row',
+              gap: '0.5rem'
+            }}>
+              <div style={{ position: 'relative', width: '100%' }}>
+                {/* Background Layer - Desktop Image */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center'
+                }} className="hidden md:flex">
+                  <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
+                    <div style={{ width: '40%' }}></div>
+                    <div style={{ 
+                      width: '60%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'flex-end'
+                    }}>
+                      <img 
+                        width="640" 
+                        height="898"
+                        src="https://www.workiz.com/wp-content/uploads/2023/05/workiz-tips-mobile-app-v4623.webp"
+                        alt="Workiz Tips Mobile App V4623"
+                        style={{ 
+                          width: '100%', 
+                          height: 'auto',
+                          objectFit: 'contain'
+                        }}
+                        className="hidden md:block"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Text Content Layer */}
+                <div style={{
+                  position: 'relative',
+                  zIndex: 3,
+                  padding: '2.5rem 2rem',
+                  margin: 0
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    height: '100%'
+                  }} className="flex-col-reverse md:flex-row justify-start md:justify-start">
+                    {/* Text Column */}
+                    <div style={{
+                      width: '50%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      padding: '1rem 1.5rem',
+                      maxWidth: '100%',
+                      flexGrow: 1
+                    }}>
+                      <div>
+                        <div style={{
+                          fontSize: '12px',
+                          fontWeight: 500,
+                          textTransform: 'uppercase',
+                          letterSpacing: '2px',
+                          color: 'white',
+                          fontFamily: "'Inter', sans-serif",
+                          marginBottom: '1.5rem',
+                          visibility: 'visible',
+                          animationDelay: '0.1s',
+                          animationName: 'fadeInUp'
+                        }}>
+                          Tipping
+                        </div>
+                        <div style={{
+                          fontSize: '40px',
+                          fontWeight: 700,
+                          lineHeight: 1.1,
+                          letterSpacing: '1px',
+                          marginBottom: '1.5rem',
+                          color: '#FFD400',
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
+                          visibility: 'visible',
+                          animationDelay: '0.25s',
+                          animationName: 'fadeInUp'
+                        }}>
+                          Double<br className="hidden md:block" /> your tips
+                        </div>
+                        <div style={{
+                          fontSize: '16px',
+                          fontWeight: 400,
+                          color: 'white',
+                          visibility: 'visible',
+                          animationDelay: '0.5s',
+                          animationName: 'fadeInUp'
+                        }}>
+                          <p>Encourage customers to<br/>
+                          leave tips more frequently,<br/>
+                          potentially increasing your<br/>
+                          earnings.</p>
+                        </div>
+                      </div>
+                      <div style={{
+                        alignSelf: 'flex-end',
+                        visibility: 'visible',
+                        animationDelay: '0.75s',
+                        animationName: 'fadeInDown',
+                        marginTop: '16px'
+                      }} className="hidden md:flex">
+                        <a 
+                          href="https://www.workiz.com/signup/join-workiz/"
+                          style={{
+                            background: '#FFD400',
+                            color: '#23282B',
+                            padding: '12px 24px',
+                            borderRadius: '8px',
+                            fontSize: '16px',
+                            fontWeight: 600,
+                            cursor: 'pointer',
+                            textDecoration: 'none',
+                            display: 'inline-block',
+                            fontFamily: "'Plus Jakarta Sans', sans-serif"
+                          }}
+                        >
+                          Start free trial
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Mobile Image Column */}
+                    <div style={{
+                      width: '45%',
+                      maxWidth: '100%'
+                    }}>
+                      <img 
+                        width="686" 
+                        height="384"
+                        src="https://www.workiz.com/wp-content/uploads/2023/05/hl-tipping-mob.webp"
+                        alt="Hl Tipping Mob"
+                        style={{
+                          width: '100%',
+                          height: 'auto'
+                        }}
+                        className="block md:hidden"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Card - Online Booking */}
+            <div style={{ 
+              flex: 1, 
+              background: '#f8fafc',
+              borderRadius: '16px',
+              minWidth: '500px',
+              position: 'relative',
+              overflow: 'hidden',
+              height: '500px',
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+              {/* Text Content */}
+              <div style={{
+                padding: '48px 48px 24px 48px',
+                flex: '0 0 auto'
+              }}>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 500,
+                  textTransform: 'uppercase',
+                  letterSpacing: '2px',
+                  color: '#3b82f6',
+                  fontFamily: "'Inter', sans-serif",
+                  marginBottom: '16px'
+                }}>
+                  ONLINE BOOKING
+                </div>
+                <div style={{
+                  fontSize: '40px',
+                  fontWeight: 700,
+                  lineHeight: 1.1,
+                  letterSpacing: '1px',
+                  marginBottom: '24px',
+                  color: '#23282B',
+                  fontFamily: "'Plus Jakarta Sans', sans-serif"
+                }}>
+                  Be available<br />24/7
+                </div>
+                <div style={{
+                  fontSize: '16px',
+                  fontWeight: 400,
+                  color: '#64748b',
+                  lineHeight: 1.5,
+                  marginBottom: '32px'
+                }}>
+                  <p>Turn leads into jobs, get paid in advance, and increase bookings by 30% with the Workiz Online Booking widget.</p>
+                </div>
+              </div>
+
+              {/* Booking Interface Mockup */}
+              <div style={{
+                flex: 1,
+                padding: '0 48px 48px 48px',
+                display: 'flex',
+                alignItems: 'flex-end'
+              }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  width: '100%',
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.1)',
+                  border: '1px solid #e2e8f0'
+                }}>
+                  {/* URL Bar */}
+                  <div style={{
+                    background: '#f1f5f9',
+                    borderRadius: '8px',
+                    padding: '8px 12px',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}>
+                    <span style={{ fontSize: '16px' }}>🔒</span>
+                    <span style={{ color: '#64748b', fontSize: '14px' }}>locktech.io/book</span>
+                  </div>
+
+                  {/* LockTech Branding */}
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    marginBottom: '20px'
+                  }}>
+                    <div style={{
+                      background: '#FFD400',
+                      width: '32px',
+                      height: '32px',
+                      borderRadius: '6px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '16px',
+                      fontWeight: 'bold'
+                    }}>
+                      🔑
+                    </div>
+                    <span style={{ fontSize: '20px', fontWeight: 'bold', color: '#23282B' }}>LockTech</span>
+                  </div>
+
+                  {/* Service Selection */}
+                  <div style={{ marginBottom: '20px' }}>
+                    <div style={{ display: 'flex', gap: '16px', marginBottom: '16px' }}>
+                      <div style={{
+                        padding: '8px 16px',
+                        borderRadius: '6px',
+                        background: '#f1f5f9',
+                        fontSize: '14px',
+                        fontWeight: 500,
+                        color: '#64748b'
+                      }}>Service</div>
+                      <div style={{
+                        padding: '8px 16px',
+                        borderRadius: '6px',
+                        background: '#3b82f6',
+                        fontSize: '14px',
+                        fontWeight: 500,
+                        color: 'white'
+                      }}>Items</div>
+                      <div style={{
+                        padding: '8px 16px',
+                        borderRadius: '6px',
+                        background: '#f1f5f9',
+                        fontSize: '14px',
+                        fontWeight: 500,
+                        color: '#64748b'
+                      }}>Schedule</div>
+                    </div>
+
+                    {/* Service Options */}
+                    <div style={{ display: 'flex', gap: '12px' }}>
+                      <div style={{
+                        background: '#f8fafc',
+                        border: '2px solid #e2e8f0',
+                        borderRadius: '8px',
+                        padding: '12px',
+                        flex: 1,
+                        textAlign: 'center'
+                      }}>
+                        <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '4px' }}>Installation</div>
+                        <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#3b82f6' }}>$800</div>
+                      </div>
+                      <div style={{
+                        background: '#f8fafc',
+                        border: '2px solid #e2e8f0',
+                        borderRadius: '8px',
+                        padding: '12px',
+                        flex: 1,
+                        textAlign: 'center'
+                      }}>
+                        <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '4px' }}>Maintenance</div>
+                        <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#3b82f6' }}>$0</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div style={{ display: 'flex', gap: '12px' }}>
+                    <button style={{
+                      background: '#f1f5f9',
+                      border: '2px solid #e2e8f0',
+                      borderRadius: '8px',
+                      padding: '12px 20px',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      color: '#64748b',
+                      flex: 1
+                    }}>
+                      Online Booking
+                    </button>
+                    <button style={{
+                      background: 'white',
+                      border: '2px solid #e2e8f0',
+                      borderRadius: '8px',
+                      padding: '12px 20px',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      color: '#64748b',
+                      flex: 1,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px'
+                    }}>
+                      Reserve with <span style={{ color: '#4285f4', fontWeight: 'bold' }}>Google</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+
         <Integrations />
         <FaqSection />
         <FooterSection />
