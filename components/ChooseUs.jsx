@@ -1,18 +1,15 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
+
 
 const features = [
   {
     icon: (
-      // Custom outlined team/group SVG
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2966F6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="7" r="3" />
-        <circle cx="5.5" cy="10.5" r="2.5" />
-        <circle cx="18.5" cy="10.5" r="2.5" />
-        <path d="M2 20c0-2.5 3.5-4.5 7-4.5s7 2 7 4.5" />
-        <path d="M12 13c3.5 0 7 2 7 4.5" />
-        <path d="M12 13c-3.5 0-7 2-7 4.5" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+        <circle cx="9" cy="7" r="4" fill="#2966F6"/>
+        <circle cx="15" cy="7" r="4" fill="#2966F6"/>
+        <path d="M2 21v-4c0-2.2 1.8-4 4-4h6c2.2 0 4 1.8 4 4v4" fill="#2966F6"/>
+        <path d="M14 21v-4c0-1.3-.5-2.5-1.3-3.4" stroke="#2966F6" strokeWidth="2" fill="none"/>
+        <path d="M22 21v-4c0-2.2-1.8-4-4-4" stroke="#2966F6" strokeWidth="2" fill="none"/>
       </svg>
     ),
     title: "Your teams gets it, fast",
@@ -20,21 +17,21 @@ const features = [
   },
   {
     icon: (
-      <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#2966F6" strokeWidth="1.5"><circle cx="17" cy="12" r="2"/><rect x="3" y="10" width="14" height="4" rx="2"/><circle cx="17" cy="12" r="5" stroke="#2966F6" strokeWidth="1.5" fill="none"/></svg>
+      <svg width="60" height="60" viewBox="0 0 40 40" fill="none">
+        <rect x="8" y="16" width="24" height="12" rx="6" fill="#2966F6"/>
+        <circle cx="26" cy="22" r="4" fill="white"/>
+      </svg>
     ),
     title: "Get running in days",
     description: "Set up fast without disrupting your business. You can fully onboard in days.",
   },
   {
     icon: (
-      // Custom outlined user headset SVG
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2966F6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="10" r="4" />
-        <path d="M4 18v-2a8 8 0 0 1 16 0v2" />
-        <path d="M19 21a2 2 0 0 1-2-2v-1" />
-        <path d="M5 21a2 2 0 0 0 2-2v-1" />
-        <path d="M15.5 14.5l1.5 1.5" />
-        <path d="M8.5 14.5l-1.5 1.5" />
+      <svg width="60" height="60" viewBox="0 0 40 40" fill="none">
+        <path d="M20 8C15.6 8 12 11.6 12 16v8c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-6c0-1.1-.9-2-2-2h-2v-2c0-3.3 2.7-6 6-6s6 2.7 6 6v2h-2c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-8c0-4.4-3.6-8-8-8z" fill="#2966F6"/>
+        <path d="M14 20h2v4h-2v-4zm10 0h2v4h-2v-4z" fill="#2966F6"/>
+        <circle cx="20" cy="28" r="1.5" fill="#2966F6"/>
+        <path d="M20 29.5v2.5" stroke="#2966F6" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
     title: "Onboarding specialist",
@@ -83,7 +80,7 @@ export default function ChooseUs() {
       <section className="w-full flex flex-col items-center justify-center py-8 px-4 bg-white">
         <div className="w-full flex flex-col md:flex-row items-start justify-center gap-8 md:gap-0 max-w-6xl mx-auto">
           {features.map((feature, idx) => (
-            <div key={feature.title} className="flex-1 flex flex-col items-center text-center px-4 md:px-8 mb-10 md:mb-0 bg-white py-10 border-none border-0 border-transparent shadow-none" style={{ boxShadow: 'none', border: 'none', borderColor: 'transparent', borderRadius: '12px' }}>
+            <div key={feature.title} className={`flex-1 flex flex-col items-center text-center px-4 md:px-8 mb-10 md:mb-0 bg-white py-10 border-none border-0 border-transparent shadow-none ${idx === 0 ? 'mt-8' : ''}`} style={{ boxShadow: 'none', border: 'none', borderColor: 'transparent', borderRadius: '12px' }}>
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-[#111] font-extrabold text-xl md:text-2xl mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{feature.title}</h3>
               <p className="text-[#111] text-base md:text-lg font-normal" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{feature.description}</p>
